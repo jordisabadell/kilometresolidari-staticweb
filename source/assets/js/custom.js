@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+console.log("done!");
+
   $(".btn-anchor").each(function(key, value) {
       $(value).on('click', function(event) {
       if (this.hash !== "") {
