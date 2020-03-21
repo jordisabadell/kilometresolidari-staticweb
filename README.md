@@ -55,26 +55,24 @@ Static web page. It built with webpack module bundler and it deploy in CI/CD env
 - Radar Nightfall (https://radar.nightfall.ai/)
 
 ---
-## Project configuration
 
-### Local development environment
+## Local configuration
+
+### Add Git project to VSCode
+1) Open VSCode
+2) Go to menu option *View* > *Command Palette* > select *Git: clone*
+3) Add https://github.com/jordisabadell/kilometresolidari-staticweb.git
+4) Select destination local folder
+
+### Set environment variables
 Rename file *.env_EMTPY* to *.env* and set the following variables:
 > APIKEYRECAPTCHA=  
 > APIKEYFIREBASE=  
 > APIKEYCUSTOMSEARCH=
 
-### TravisCI configuration
-Set the following *Environment Variables*:
-> APIKEYRECAPTCHA  
-> APIKEYFIREBASE  
-> APIKEYCUSTOMSEARCH  
-> FIREBASE_TOKEN
+### Install tools and dependencies
 
-## Environment commands
-
-### Webpack commands
-
-Install global Webpack
+Install Webpack
 ```
 npm install --global webpack webpack-cli
 ```
@@ -95,7 +93,34 @@ Build and start local server (it includes command 'build development mode'. See 
 npm run start
 ```
 
-### Git common commands
+---
+
+## TravisCI configuration
+
+### Set environment variables
+Set the following *Environment Variables*:
+> APIKEYRECAPTCHA  
+> APIKEYFIREBASE  
+> APIKEYCUSTOMSEARCH  
+> FIREBASE_TOKEN
+
+---
+
+## Common commands
+
+### Firebase: deploy
+Install Firebase
+```
+npm install -g firebase-tools
+```
+Login and deploy
+```
+firebase login
+firebase init
+firebase deploy
+```
+
+### Git: download, commit and push
 Download reporitory (pull)
 ```
 git init
@@ -110,25 +135,15 @@ git commit -m "Comment"
 git remote add origin https://github.com/jordisabadell/kilometresolidari-staticweb
 git push -u origin master
 ```
+
+### Git: reset
 Reset
 ```
 git fetch origin
 git reset --hard origin/master
 ```
 
-### Firebase deploy commands
-Install Firebase
-```
-npm install -g firebase-tools
-```
-Login and deploy
-```
-firebase login
-firebase init
-firebase deploy
-```
-
-### Remove sensitive data
+### Git: Remove sensitive data
 
 Download BFG Repo-Cleaner and copy to {BFG_PATH}. I.e: 'c:\tmp'
 https://rtyley.github.io/bfg-repo-cleaner/
