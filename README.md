@@ -97,6 +97,11 @@ npm run start
 
 ## TravisCI configuration
 
+### Generate Firebase token
+```
+firebase login:ci
+```
+
 ### Set environment variables
 Set the following *Environment Variables*:
 > APIKEYRECAPTCHA  
