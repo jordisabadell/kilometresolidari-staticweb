@@ -2,25 +2,11 @@
   "id": "fb61f77a-a5cf-47ee-8da5-a7eb7cf89717",
   "version": "2.0",
   "name": "selenium-test",
-  "url": "https://kilometresolidari-static-web.firebaseapp.com/",
+  "url": "http://localhost:8080/",
   "tests": [{
     "id": "27dbf1a6-36a4-4902-8464-4cdcda13f0a5",
-    "name": "Untitled",
+    "name": "01-Load page",
     "commands": [{
-      "id": "4735c757-b497-4115-a6a6-6678ad0e69bc",
-      "comment": "",
-      "command": "open",
-      "target": "https://kilometresolidari-static-web.firebaseapp.com/?action=test",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a69763fb-022c-4c08-b8c8-bd4c768a947f",
-      "comment": "",
-      "command": "//open",
-      "target": "http://localhost:8080/",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "721f445c-f527-4bb1-96c7-0995307e5f52",
       "comment": "",
       "command": "assertElementPresent",
@@ -32,34 +18,111 @@
         ["xpath=//span[contains(.,'5 anys, 20.000€. Moltes gràcies!')]", "xpath:innerText"]
       ],
       "value": ""
+    }]
+  }, {
+    "id": "7ee863c7-b1c4-4968-8ba1-8ee783fe18dd",
+    "name": "02-F01-Main menu",
+    "commands": [{
+      "id": "3f074d77-a142-4e3d-a1ff-c4f5b902a4a1",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=menu",
+      "targets": [
+        ["id=menu", "id"],
+        ["linkText=☰", "linkText"],
+        ["css=#menu", "css:finder"],
+        ["xpath=//a[contains(text(),'☰')]", "xpath:link"],
+        ["xpath=//a[@id='menu']", "xpath:attributes"],
+        ["xpath=//nav[@id='navbar']/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'☰')]", "xpath:innerText"]
+      ],
+      "value": ""
     }, {
-      "id": "6b4f13af-8be9-4d33-8359-0e438fc1c490",
+      "id": "01154776-769f-4e64-8e34-913afbc5d271",
       "comment": "",
       "command": "click",
       "target": "id=menu",
       "targets": [],
       "value": ""
     }, {
-      "id": "56d6c49a-1a21-4288-9e38-78ce40b102e9",
+      "id": "f503cb99-0d63-443c-9092-5059f3a00bb9",
       "comment": "",
-      "command": "click",
-      "target": "id=menu_fotos",
+      "command": "pause",
+      "target": "1000",
       "targets": [],
       "value": ""
     }, {
-      "id": "e90fb6b5-b1fd-4bd2-a76a-9b51b55f1a57",
+      "id": "28673579-3c24-452a-99ba-2e2fbf6f6b85",
       "comment": "",
       "command": "click",
-      "target": "css=.col-sm-6:nth-child(2) .gallery-img",
+      "target": "id=menu_info",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "8a7f8507-e118-412e-ac2b-e1cd5e95d3b7",
+    "name": "02-F02-Lightbox plugin",
+    "commands": [{
+      "id": "48708d7c-886d-4a13-a3da-b6fdd5d55a54",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//img[@alt='Cursa de la Festa Major de Sabadell 2014 - Kilòmetre Solidari Associació Juvenil Esquitx']",
       "targets": [
-        ["css=.col-sm-6:nth-child(2) .gallery-img", "css:finder"],
-        ["xpath=//img[@alt='Cursa de la Festa Major de Sabadell 2015 - Kilòmetre Solidari Associació Juvenil Esquitx']", "xpath:img"],
-        ["xpath=//div[@id='fotos']/section/div[2]/div[2]/figure/a/img", "xpath:idRelative"],
-        ["xpath=//div[2]/figure/a/img", "xpath:position"]
+        ["css=.row:nth-child(2) > .col-sm-6:nth-child(1) .gallery-img", "css:finder"],
+        ["xpath=//img[@alt='Cursa de la Festa Major de Sabadell 2014 - Kilòmetre Solidari Associació Juvenil Esquitx']", "xpath:img"],
+        ["xpath=//div[@id='fotos']/section/div[2]/div/figure/a/img", "xpath:idRelative"],
+        ["xpath=//a/img", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "c961fccf-6b96-4aca-90f2-5a8e5a6abf65",
+      "id": "4f526a3c-5d38-4c5c-b290-a199587f6468",
+      "comment": "",
+      "command": "pause",
+      "target": "500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37698eaf-6cf6-4d6d-9d8f-777334a9f3a9",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//img[@alt='Cursa de la Festa Major de Sabadell 2014 - Kilòmetre Solidari Associació Juvenil Esquitx']",
+      "targets": [
+        ["css=.row:nth-child(2) > .col-sm-6:nth-child(1) .gallery-img", "css:finder"],
+        ["xpath=//img[@alt='Cursa de la Festa Major de Sabadell 2014 - Kilòmetre Solidari Associació Juvenil Esquitx']", "xpath:img"],
+        ["xpath=//div[@id='fotos']/section/div[2]/div/figure/a/img", "xpath:idRelative"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34810295-137a-472c-b3f8-68571434d33f",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ffbe12bc-3309-439d-a39b-d07310750b0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.lb-next",
+      "targets": [
+        ["css=.lb-next", "css:finder"],
+        ["xpath=//div[@id='lightbox']/div/div/div/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[86]", "xpath:href"],
+        ["xpath=//div[6]/div/div/div/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "445652ec-9f15-4817-b390-88fbec8cf874",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ac8d131e-c412-4c4b-896e-935b5a9e6985",
       "comment": "",
       "command": "click",
       "target": "css=.lb-close",
@@ -69,31 +132,75 @@
         ["xpath=//div[2]/div/div[2]/a", "xpath:position"]
       ],
       "value": ""
+    }]
+  }, {
+    "id": "4be7a35f-68dd-4e58-9b82-1f9aa64e2b94",
+    "name": "02-F03-Google Custom Search",
+    "commands": [{
+      "id": "6d879ee8-2a9f-4e1d-9ddb-5e322d45eeab",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=q",
+      "targets": [],
+      "value": ""
     }, {
-      "id": "ead9115e-d0b2-4ea4-9dcf-8f2ebe6c709c",
+      "id": "edfa23c3-8af6-4cf6-9cdf-ffa6f93ce445",
       "comment": "",
       "command": "click",
       "target": "id=q",
-      "targets": [
-        ["id=q", "id"],
-        ["css=#q", "css:finder"],
-        ["xpath=//input[@id='q']", "xpath:attributes"],
-        ["xpath=//div[@id='buscador-formulari']/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
-      "id": "1864808e-5de4-4a88-bbbc-613a31d1d5f0",
+      "id": "46166f37-9570-4198-8245-fbb35639856e",
       "comment": "",
       "command": "type",
       "target": "id=q",
       "targets": [],
-      "value": "jordi"
+      "value": "Jordi"
     }, {
-      "id": "40d463f3-c898-4fa8-839f-bc50b83f5f25",
+      "id": "2109b132-fcf8-44c7-983a-0f6686b9504d",
       "comment": "",
       "command": "click",
       "target": "id=search",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "308c1d8c-3f17-4748-a5cb-e321379baea4",
+    "name": "00-TEST ALL",
+    "commands": [{
+      "id": "993c9e1f-ef45-444c-92a0-2602b4226d38",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "628d8f24-1b2f-47d1-9716-d24635328183",
+      "comment": "",
+      "command": "run",
+      "target": "01-Load page",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c9bee0b6-c4cc-4211-99c3-838ed37964c2",
+      "comment": "",
+      "command": "run",
+      "target": "02-F01-Main menu",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c310ff47-02b0-40b0-9402-efab503369bc",
+      "comment": "",
+      "command": "run",
+      "target": "02-F02-Lightbox plugin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb3bd590-dc0f-4b99-9c51-5c3d69c7b9e7",
+      "comment": "",
+      "command": "run",
+      "target": "02-F03-Google Custom Search",
       "targets": [],
       "value": ""
     }]
@@ -106,6 +213,6 @@
     "timeout": 300,
     "tests": ["27dbf1a6-36a4-4902-8464-4cdcda13f0a5"]
   }],
-  "urls": ["https://www.kilometresolidari.cat/", "https://kilometresolidari-static-web.firebaseapp.com/"],
+  "urls": ["http://localhost:8080/", "https://kilometresolidari-static-web.firebaseapp.com/?origin=selenium"],
   "plugins": []
 }
