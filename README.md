@@ -120,23 +120,22 @@ firebase init
 firebase deploy
 ```
 
-### Git: download, commit and push
-Download reporitory (pull)
+### Git: pull
+Download reporitory
 ```
 git init
 git remote add origin https://github.com/jordisabadell/kilometresolidari-staticweb
 git pull origin master
 ```
-Commit and push
+
+### Git: commit and push
+Commit change and push on master
 ```
-git init
-git add .
 git commit -m "Comment"
-git remote add origin https://github.com/jordisabadell/kilometresolidari-staticweb
-git push -u origin master
+git push origin
 ```
 
-### Git: reset
+### Git: discart changes
 Reset
 ```
 git fetch origin
@@ -144,7 +143,6 @@ git reset --hard origin/master
 ```
 
 ### Git: Remove sensitive data
-
 Download BFG Repo-Cleaner and copy to {BFG_PATH}. I.e: 'c:\tmp'
 https://rtyley.github.io/bfg-repo-cleaner/
 
