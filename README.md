@@ -102,6 +102,11 @@ npm run start
 firebase login:ci
 ```
 
+### Shell script Git permisions
+```
+git update-index --chmod=+x build.sh
+```
+
 ### Set environment variables
 Set the following *Environment Variables*:
 > APIKEYRECAPTCHA  
