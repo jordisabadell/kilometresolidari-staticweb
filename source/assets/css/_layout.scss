@@ -1,0 +1,56 @@
+/* ------ CONTAINERS ------ */
+section {
+    margin: auto;
+    
+    width: 90%; //small devices
+
+    @media only screen and (min-width : 768px) { //medium devices
+        &{
+            width: 80%;
+        }
+    }
+    @media only screen and (min-width : 992px) { //normal devices
+        &{
+            width: 70%;
+        }
+    }
+}
+.container-fluid {
+    
+    padding: 40px 0px 40px 0px;
+
+    @media only screen and (min-width : 768px) {
+        &{
+            padding: 50px 0px 50px 0px;
+        }
+    }
+    @media only screen and (min-width : 992px) {
+        &{
+            padding: 60px 0px 60px 0px;
+        }
+    }
+
+    &.colored {
+        background-color: #f2f2f2;
+    }
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+/* ----- FOOTER ----- */
+footer {
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 20px 40px 60px 40px;
+
+    #{$a-tags} {
+        color: #fff;
+    }
+
+    @media only screen and (min-width : 980px) { /* Add-this plugin */
+        padding: 20px 20px 20px 20px;
+    }
+}

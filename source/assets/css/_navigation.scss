@@ -1,0 +1,115 @@
+ /* ----- NAVIGATION -----*/
+ .navbar {
+    z-index: 99;
+    color: #fff;
+
+    border-radius: 0px;
+
+    -webkit-transition: background-color 0.5s; /* Safari */
+    transition: background-color 0.5s;
+
+    &>div { //main container
+        margin: 0 auto;
+        width: 90%;
+    }
+    .navbar-brand {
+        margin-left: -15px;
+        padding-top: 13px;
+        font-size: 24px;
+        font-weight: 600px;
+    }
+    .navbar-right {
+        float: right!important;
+    }
+    #{$a-tags} {
+        color: #fff;
+        text-decoration: none;
+    }
+    a.open-overlay {
+        display: inline-block;
+        padding-top: 5px;
+        font-size: 26px;
+    }
+    &.solid {
+        background-color: $main-color;
+        -webkit-box-shadow: 0 4px 6px -6px #999;
+        -moz-box-shadow: 0 4px 6px -6px #999;
+        box-shadow: 0 4px 6px -6px #999;
+    }
+}
+.navbar-fixedtop {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    left: 0;
+}
+.navside {
+    z-index: 99;
+    position: fixed;
+    top: 25%;
+    left: 5%;
+
+    @media only screen and (max-width : 768px) { //lower than medium devices
+        &{
+            display: none;
+        }
+    }
+
+    li {
+        padding-bottom: 8px;
+    }
+    li a {
+        width: 8px;
+        height: 8px;
+        border-radius: 50px;
+        background-color: #000;
+        padding: 0px!important;
+
+        &:focus, &:hover {
+            background-color: #000!important;
+        }
+    }
+    li.active a {
+        background-color: $main-color;
+        &:focus, &:hover {
+            background-color: $main-color!important;
+        }
+    }
+}
+.navoverlay {
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000999;
+
+    background-color: #fff;
+    color: #000;
+
+    & > div {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #{$a-tags} {
+        font-size: 140%;
+        text-decoration: none;
+    }
+    a.close-overlay {
+        display: inline-block;
+        padding-top: 10px;
+        padding-right: 4px;
+        font-size: 26px;
+    }
+    a .fa {
+        font-size: 200%;
+    }
+    ul > li {
+        padding-bottom: 12px;
+        text-align: center;
+    }
+    .brand {
+        font-weight: bold;
+    }
+}

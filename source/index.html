@@ -1,0 +1,550 @@
+<!DOCTYPE html>  
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Done! Kilòmetre Solidari - Associació Juveni Esquitx Sabadell</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/images/icons/favicon/safari-pinned-tab.svg" color="#18a79d">
+  <meta name="msapplication-TileColor" content="#18a79d">
+	<meta name="theme-color" content="#18a79d">
+
+  <meta property="og:url" content="https://kilometresolidari-staticweb.web.app/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Kilòmetre Solidari" />
+	<meta property="og:description" content="Correm la Cursa de la Festa Major i recollim diners per finançar l'Esquitx" />
+	<meta property="og:image" content="https://kilometresolidari-staticweb.web.app/assets/images/kmsolidari.png" />
+
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-65144907-2', 'auto');
+    ga('send', 'pageview');
+	</script>
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+    </script>
+    <script type="text/javascript" async=true>
+      /*var elem = document.createElement('script');
+      elem.src = 'https://quantcast.mgr.consensu.org/cmp.js';
+      elem.async = true;
+      elem.type = "text/javascript";
+      var scpt = document.getElementsByTagName('script')[0];
+      scpt.parentNode.insertBefore(elem, scpt);
+      (function() {
+      var gdprAppliesGlobally = true;
+      function addFrame() {
+          if (!window.frames['__cmpLocator']) {
+          if (document.body) {
+              var body = document.body,
+                  iframe = document.createElement('iframe');
+              iframe.style = 'display:none';
+              iframe.name = '__cmpLocator';
+              body.appendChild(iframe);
+          } else {
+              // In the case where this stub is located in the head,
+              // this allows us to inject the iframe more quickly than
+              // relying on DOMContentLoaded or other events.
+              setTimeout(addFrame, 5);
+          }
+          }
+      }
+      addFrame();
+      function cmpMsgHandler(event) {
+          var msgIsString = typeof event.data === "string";
+          var json;
+          if(msgIsString) {
+          json = event.data.indexOf("__cmpCall") != -1 ? JSON.parse(event.data) : {};
+          } else {
+          json = event.data;
+          }
+          if (json.__cmpCall) {
+          var i = json.__cmpCall;
+          window.__cmp(i.command, i.parameter, function(retValue, success) {
+              var returnMsg = {"__cmpReturn": {
+              "returnValue": retValue,
+              "success": success,
+              "callId": i.callId
+              }};
+              event.source.postMessage(msgIsString ?
+              JSON.stringify(returnMsg) : returnMsg, '*');
+          });
+          }
+      }
+      window.__cmp = function (c) {
+          var b = arguments;
+          if (!b.length) {
+          return __cmp.a;
+          }
+          else if (b[0] === 'ping') {
+          b[2]({"gdprAppliesGlobally": gdprAppliesGlobally,
+              "cmpLoaded": false}, true);
+          } else if (c == '__cmp')
+          return false;
+          else {
+          if (typeof __cmp.a === 'undefined') {
+              __cmp.a = [];
+          }
+          __cmp.a.push([].slice.apply(b));
+          }
+      }
+      window.__cmp.gdprAppliesGlobally = gdprAppliesGlobally;
+      window.__cmp.msgHandler = cmpMsgHandler;
+      if (window.addEventListener) {
+          window.addEventListener('message', cmpMsgHandler, false);
+      }
+      else {
+          window.attachEvent('onmessage', cmpMsgHandler);
+      }
+      })();
+      window.__cmp('init', {
+          'Language': 'es',
+      'Initial Screen Title Text': 'Tu privacidad es importante para nosotros',
+      'Initial Screen Reject Button Text': 'No acepto',
+      'Initial Screen Accept Button Text': 'Acepto',
+      'Initial Screen Purpose Link Text': 'Más información',
+      'Purpose Screen Title Text': 'Tu privacidad es importante para nosotros',
+      'Purpose Screen Body Text': 'Puedes configurar tus preferencias y elegir como quieres que tus datos sean utilizados para los siguientes propósitos. Puedes elegir configurar tus preferencias solo con nosotros independientemente del resto de nuestros partners. Cada propósito tiene una descripción para que puedas saber como nosotros y nuestros partners utilizamos tus datos',
+      'Purpose Screen Vendor Link Text': 'Ver lista completa de partners',
+      'Purpose Screen Cancel Button Text': 'Cancelar',
+      'Purpose Screen Save and Exit Button Text': 'Guardar y salir',
+      'Vendor Screen Title Text': 'Tu privacidad es importante para nosotros',
+      'Vendor Screen Body Text': 'Puedes dar tu consentimiento de manera individual a cada partner. Ver la lista de todos los propósitos para los cuales utilizan tus datos para tener más información. En algunos casos, las empresas pueden revelar que usan tus datos sin pedir tu consentimiento, en función de intereses legítimos. Puedes hacer click en su política de privacidad para obtener más información al respecto o para rechazarlo.',
+      'Vendor Screen Accept All Button Text': 'Aceptar todo',
+      'Vendor Screen Reject All Button Text': 'Rechazar todo',
+      'Vendor Screen Purposes Link Text': 'Ver porpósitos',
+      'Vendor Screen Cancel Button Text': 'Cancelar',
+      'Vendor Screen Save and Exit Button Text': 'Guardar y salir',
+      'Initial Screen Body Text': 'Tanto nuestros partners como nosotros utilizamos cookies en nuestro sitio web para personalizar contenido y publicidad, proporcionar funcionalidades a las redes sociales, o analizar nuestro tráfico. Haciendo click consientes el uso de esta tecnologia en nuestra web. Puedes cambiar de opinion y personalizar tu consentimiento siempre que quieras volviendo a esta web',
+      'Initial Screen Body Text Option': 1,
+      'Publisher Name': 'Associació Juvenil Esquitx',
+      'Display UI': 'always',
+      'Publisher Purpose IDs': [1,2,3,4,5],
+      'Post Consent Page': 'http://www.kilometresolidari.cat/blank.html',
+    });
+    */
+    </script>
+
+</head>
+
+<body id="top" data-spy="scroll" data-target=".navside" data-offset="60">
+  
+  <nav id="navbar" class="navbar navbar-fixedtop">
+		<div>
+			<div class="navbar-brand">
+		  		<h1><a href="#top" class="btn-anchor" title="Kilòmetre Solidari">#KMSOLIDARI</a></h1>
+			</div>
+			<div class="navbar-right">
+				<a href="#" title="Obrir menú principal" class="open-overlay">&#9776;</a>
+			</div>
+		</div>
+  </nav>
+  
+  <div id="navoverlay" class="navoverlay" aria-hidden="true">
+		<div class="text-right">
+			<a href="#" title="Tancar menú principal" class="close-overlay">&times;</a>
+		</div>
+		<div class="text-center">
+			<ul class="list-unstyled">
+				<li><a href="#info" title="Secció Presentació">Presentació</a></li>
+				<li><a href="#dades" title="Secció El projecte en xifres">El projecte en xifres</a></li>
+				<li><a href="#fotos" title="Secció Fotografies">Fotografies</a></li>
+				<li><a href="#experiencies" title="Secció Experiències del kilòmetre">Experiències del kilòmetre</a></li>
+				<li><a href="#guia" title="Secció Guia">Guia Kilòmetre Solidari</a></li>
+				<li><a href="#llibre" title="Secció Llibre 'Darrere cada quilòmetre'">Llibre 'Darrere cada quilòmetre'</a></li>
+				<li><a href="#contacte" title="Secció Contacte amb l'Esquitx">Contacte amb l'Esquitx</a></li>
+			</ul>
+		</div>
+		<div class="text-center separated-top-x2">
+			<ul class="list-unstyled list-inline">
+				<li><a id="facebook-esquitx" href="https://www.facebook.com/esquitxsbd/" target="_blank" title="Facebook www.facebook.com/esquitxsbd" data-ga="click" data-ga-action="link"><i class="fa facebook fa-facebook-official"></i></a></li>
+				<li><a id="twitter-esquitx" href="https://twitter.com/esquitx" target="_blank" title="Twitter @esquitx"><i class="fa twitter fa-twitter-square" data-ga="click" data-ga-action="link"></i></a></li>
+				<li><a id="instagram-esquitx" href="https://www.instagram.com/esquitx_sbd/" target="_blank" title="Instagram @esquitx_sbd" data-ga="click" data-ga-action="link"><i class="fa instagam fa-instagram"></i></a></li>
+			</ul>
+		</div>
+		<div class="text-center">
+			<ul class="list-unstyled list-inline">
+				<li><a href="http://www.esquitxsbd.org" class="brand" title="Associació Juvenil Esquitx" data-ga="click" data-ga-action="link" target="_blank">www.esquitxsbd.org</a></li>
+			</ul>
+		</div>
+	</div>
+	 
+	<div id="navside" class="navside">
+		<ul class="nav 2v-stacked list-unstyled">
+			<li><a href="#info" class="btn-anchor" title="Presentació" data-toggle="tooltip" data-placement="right"></a></li>
+			<li><a href="#dades" class="btn-anchor" title="El&nbsp;projecte&nbsp;en&nbsp;xifres" data-toggle="tooltip" data-placement="right"></a></li>
+			<li><a href="#fotos" class="btn-anchor" title="Fotografies" data-toggle="tooltip" data-placement="right"></a></li>
+			<li><a href="#experiencies" class="btn-anchor" title="Experiències&nbsp;del&nbsp;kilòmetre" data-toggle="tooltip" data-placement="right"></a></li>
+			<li><a href="#guia" class="btn-anchor" title="Guia" data-toggle="tooltip" data-placement="right"></a></li>
+			<li><a href="#llibre" class="btn-anchor" title="Llibre&nbsp;'Darrere&nbsp;cada&nbsp;quilòmetre'" data-toggle="tooltip" data-placement="right"></a></li>
+			<li><a href="#contacte" class="btn-anchor" title="Contacte&nbsp;amb&nbsp;l'Esquitx" data-toggle="tooltip" data-placement="right"></a></li>
+		</ul>
+	</div>
+
+	<main>
+		<!-- Jumbotron -->
+		<div id="jumbotron" class="text-center">
+			<section>
+				<header><p class="title"><span class="highlight">5 anys, 20.000€. Moltes gràcies!</span></p></header>
+				<!--<div class="separated-top">
+					<a id="call-to-action" href="#info" title="Més informació" class="btn btn-main btn-lg" role="button" aria-pressed="true" data-ga="click" data-ga-action="call-to-action" data-ga-label="Més informació">Saber més</a>-->
+				</div>
+			</section>
+		</div>
+		<div id="info" class="container-fluid text-center">
+			<section>
+				<div class="row">
+		    		<div class="col-sm-12">
+						<article>
+							<h2>Presentació</h2>
+							<p>El Kilòmetre Solidari és un projecte que combina esport i solidaritat per finançar projectes de l'<a href="http://www.esquitxsbd.org" target="_blank" title="Web de l'Associació Juvenil Esquitx de Sabadell" data-ga="click" data-ga-action="link">Associació Juvenil Esquitx</a>. Una entitat de lleure que treballa per la igualtat d’oportunitats d’infants i joves de la ciutat de Sabadell.</p>
+							<p>En les seves 5 edicions ens ha permès recaptar 20.000€ gràcies a la col·laboració de 250 voluntaris i 15 patrocinadors.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		<!-- Dades -->
+		<div id="dades" class="container-fluid text-center colored charts">
+			<section>
+				<div class="row">
+		    		<div class="col-sm-12">
+						<h2>El projecte en xifres</h2>
+					</div>
+				</div>
+				<div class="row row">
+					<div class="col-sm-3 col-center separated-top">
+						<img src="assets/images/icon-edicions.svg" height="64" alt="5 edicions"/>
+						<span class="numero">5</span>
+						<p class="small">edicions</p>
+					</div>
+					<div class="col-sm-3 col-center separated-top">
+						<img src="assets/images/icon-voluntaris.svg" height="64" alt="Voluntaris"/>
+						<span class="numero">249</span>
+						<p class="small">voluntaris</p>
+					</div>
+					<div class="col-sm-3 col-center separated-top">
+						<img src="assets/images/icon-patrocinadors.svg" height="64" alt="Patrocinadors"/>
+						<span class="numero">15</span>
+						<p class="small">patrocinadors</p>
+					</div>
+					<div class="col-sm-3 col-center separated-top">
+						<img src="assets/images/icon-diners.svg" height="64" alt="17.730€ recaptats"/>
+						<span id="recaptats-count" class="numero">0 €</span>
+						<p class="small">euros recaptats</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 grafic">
+						<div id="chart-voluntaris"></div>
+					</div>
+					<div class="col-sm-6 grafic">
+						<div id="chart-diners-recaptats"></div>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		<!-- Fotos -->
+		<div id="fotos" class="container-fluid text-center">
+			<section>
+				<div class="row">
+		    		<div class="col-sm-12">
+						<h2>Coneixes algú?</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+						<figure>
+							<a href="data/gallery/kilometre-solidari-2014_01.jpg" title="1er Kilòmetre Solidari Associació Juvenil Esquitx (2014)" data-lightbox="fotos" data-ga="click" data-ga-action="info" data-ga-category="Fotos">
+		    					<img class="gallery-img" src="" data-src="assets/images/kilometre-solidari-2014_01-xs.jpg" alt="Cursa de la Festa Major de Sabadell 2014 - Kilòmetre Solidari Associació Juvenil Esquitx" title="Cursa de la Festa Major de Sabadell 2014 - Kilòmetre Solidari Associació Juvenil Esquitx">
+		    				</a>
+		    			</figure>
+		    		</div>
+					<div class="col-sm-6">
+						<figure>
+							<a href="data/gallery/kilometre-solidari-2015_01.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos" data-ga="click" data-ga-action="info" data-ga-category="Fotos">
+			    				<img class="gallery-img" src="" data-src="assets/images/kilometre-solidari-2015_01-xs.jpg" alt="Cursa de la Festa Major de Sabadell 2015 - Kilòmetre Solidari Associació Juvenil Esquitx" title="Cursa de la Festa Major de Sabadell 2015 - Kilòmetre Solidari Associació Juvenil Esquitx">
+			    			</a>
+			    		</figure>
+					</div>
+					<div class="col-sm-6">
+						<figure>
+							<a href="data/gallery/kilometre-solidari-2016_01.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos" data-ga="click" data-ga-action="info" data-ga-category="Fotos">
+			    				<img class="gallery-img" src="" data-src="assets/images/kilometre-solidari-2016_01-xs.jpg" alt="Cursa de la Festa Major de Sabadell 2016 - Kilòmetre Solidari Associació Juvenil Esquitx" title="Cursa de la Festa Major de Sabadell 2016 - Kilòmetre Solidari Associació Juvenil Esquitx">
+			    			</a>
+			    		</figure>
+					</div>
+					<div class="col-sm-6">
+						<figure>
+							<a href="data/gallery/kilometre-solidari-2017_01.jpg" title="4t Kilòmetre Solidari Associació Juvenil Esquitx (2017)" data-lightbox="fotos" data-ga="click" data-ga-action="info" data-ga-category="Fotos">
+			    				<img class="gallery-img" src="" data-src="assets/images/kilometre-solidari-2017_01-xs.jpg" alt="4t Kilòmetre Solidari Associació Juvenil Esquitx (2017)" title="4t Kilòmetre Solidari Associació Juvenil Esquitx (2017)">
+			    			</a>
+			    		</figure>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-centered">
+						<figure>
+							<a href="data/gallery/kilometre-solidari-2018_01.jpg" title="5è Kilòmetre Solidari Associació Juvenil Esquitx (2018)" data-lightbox="fotos" data-ga="click" data-ga-action="info" data-ga-category="Fotos">
+			    				<img class="gallery-img" src="" data-src="assets/images/kilometre-solidari-2018_01-xs.jpg" alt="5è Kilòmetre Solidari Associació Juvenil Esquitx (2018)" title="5è Kilòmetre Solidari Associació Juvenil Esquitx (2018)">
+			    			</a>
+			    		</figure>
+					</div>
+
+					<a class="hidden" href="data/gallery/kilometre-solidari-2014_02.jpg" title="1er Kilòmetre Solidari Associació Juvenil Esquitx (2014)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2014_03.jpg" title="1er Kilòmetre Solidari Associació Juvenil Esquitx (2014)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2014_04.jpg" title="1er Kilòmetre Solidari Associació Juvenil Esquitx (2014)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2014_05.jpg" title="1er Kilòmetre Solidari Associació Juvenil Esquitx (2014)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2014_06.jpg" title="1er Kilòmetre Solidari Associació Juvenil Esquitx (2014)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2014_07.jpg" title="1er Kilòmetre Solidari Associació Juvenil Esquitx (2014)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2014_08.jpg" title="1er Kilòmetre Solidari Associació Juvenil Esquitx (2014)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2015_03.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2015_04.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2015_05.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2015_06.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2015_07.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2015_08.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2015_09.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2015_10.jpg" title="2on Kilòmetre Solidari Associació Juvenil Esquitx (2015)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_02.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_03.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_04.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_05.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_06.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_07.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_08.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_09.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>
+					<a class="hidden" href="data/gallery/kilometre-solidari-2016_10.jpg" title="2er Kilòmetre Solidari Associació Juvenil Esquitx (2016)" data-lightbox="fotos"></a>			
+				</div>
+				<div class="row separated-top">
+					<div class="col-sm-12">
+						Àlbums complets: 
+						<a href="https://goo.gl/photos/kn2fP4qaAJSPwYr68" target="_blank" title="Àlbum de fotografies Kilòmetre Solidari 2014" class="albums" data-ga="click" data-ga-action="info" data-ga-category="Fotos">2014</a>,
+						<a href="https://goo.gl/photos/TSA78Ddv4CKYxUJT7" target="_blank" title="Àlbum de fotografies Kilòmetre Solidari 2015" class="albums" data-ga="click" data-ga-action="info" data-ga-category="Fotos">2015</a>,
+						<a href="https://goo.gl/photos/XT6Ko4pxwxQYBNAX8" target="_blank" title="Àlbum de fotografies Kilòmetre Solidari 2016" class="albums" data-ga="click" data-ga-action="info" data-ga-category="Fotos">2016</a>, 
+						<a href="https://photos.app.goo.gl/vHpiZmXa3rTYv0Fy1" target="_blank" title="Àlbum de fotografies Kilòmetre Solidari 2017" class="albums" data-ga="click" data-ga-action="info" data-ga-category="Fotos">2017</a>,
+						<a href="https://photos.app.goo.gl/qR56czdQeiPL3byZ7" target="_blank" title="Àlbum de fotografies Kilòmetre Solidari 2018" class="albums" data-ga="click" data-ga-action="info" data-ga-category="Fotos">2018</a>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Experiències -->
+		<div id="experiencies" class="container-fluid colored">
+			<section>
+				<div class="row text-center">
+			    	<div class="col-sm-12">
+						<h2>Experiències Kilòmetre Solidari</h2>
+					</div>
+				</div>
+				<div id="experiencies-content" class="row content separated-top-x2">					
+					<div id="experiencies-loader" class="loader hidden">
+				</div>
+			</section>
+		</div>
+
+		<!-- Guia Kilòmetre Solidari -->
+		<div id="guia" class="container-fluid text-center">
+			<section>
+				<div class="row">
+			    	<div class="col-sm-12">
+			    		<h2>Organitza <i>el Kilòmetre</i> a la teva entitat!</h2>
+			    		<p class="separated-top">El finançament d'alguns projectes de l'<a href="http://www.esquitxsbd.org" target="_blank" title="Web de l'Associació Juvenil Esquitx de Sabadell" data-ga="click" data-ga-action="link">Associació Juvenil Esquitx</a> ha estat possible gràcies a la fórmula del Kilòmetre Solidari. Un model que es realitza a través de la participació a curses populars, i que tu o la teva entitat podeu aplicar.</p>
+			    	</div>
+
+			    	<div class="col-sm-12 separated-top-x2">
+						<figure id="video" class="video hidden">
+							<div class="videoWrapper">
+								<div id="youtube_ks" class="youtube" data-embed="FtcJVrAdReU"> 
+								    <div class="play-button"></div> 
+								</div>
+							</div>
+						</figure>
+					</div>
+
+					<div class="col-sm-12 separated-top-x2">
+						<a href="data/guia-kilometre-solidari-esquitx.pdf" target="_blank" title="Descarregar Guia Kilòmetre Solidari" class="btn btn-main btn-lg" role="button" aria-pressed="true" data-ga="click" data-ga-action="download">
+							<i class="fa fa-download" aria-hidden="true"></i> Descarregar (PDF 365Kb)
+						</a>						
+			    	</div>
+			    </div>
+			</section>
+		</div>
+		
+		<!-- Llibre Darrere cada quilòmetre -->
+		<div id="llibre" class="container-fluid colored text-center">
+			<section>
+				<div class="row">
+			    	<div class="col-sm-12">
+			    		<h2>Guia per córrer</h2>
+			    		<h3><i>Darrere cada quilòmetre</i> és guia gratuïta de conceptes bàsics per córrer.</h3>
+			    		<h4>Autor: Jordi Pi amb la col·laboració i supervisió d’Esteve Bravo.</h4>
+			    	</div>
+			    	<div class="col-sm-12 separated-top">
+			    		<a href="data/llibre-darrere-cada-quilometre.pdf" target="_blank" title="Descarregar Llibre Darrere cada quilòmetre" class="" data-ga="click" data-ga-action="download">
+			    			<img src="" data-src="assets/images/llibre-darrere-cada-quilometre.png" title="Portada llibre 'Darrere cada quilòmetre'">
+			    		</a>
+			    	</div>
+					<div class="col-sm-12 separated-top">
+						
+						<a href="data/llibre-darrere-cada-quilometre.pdf" target="_blank" title="Descarregar Llibre Darrere cada quilòmetre" class="btn btn-main btn-lg" role="button" aria-pressed="true" data-ga="click" data-ga-action="download">
+							<i class="fa fa-download" aria-hidden="true"></i> Descarregar (PDF 689Kb)
+						</a>
+			    	</div>
+			    </div>
+			</section>
+		</div>
+
+		<!-- Contacte -->
+		<div id="contacte" class="container-fluid text-center">
+			<section>
+				<h2 class="text-center">Contacte amb l'Esquitx</h2>
+				<p>L'Associació Juvenil Esquitx és una entitat sense ànim de lucre que porta més de 25 anys treballant per la igualtat d'infants i joves a través de l'educació en el lleure.</p>
+		    	
+		    	<div class="row contacte separated-top">
+		    		<div class="col-sm-12 text-center">
+		    			<ul class="list-unstyled">
+		    				<li><i class="fa fa-globe"></i> <a href="http://www.esquitxsbd.org" title="Pàgina web Associació Juvenil Esquitx" target="_blank" data-ga="click" data-ga-action="link">www.esquitxsbd.org</a></li>
+		    				<li><i class="fa fa-envelope-o"></i> <a href="mailto:info@esquitxsbd.org" title="Correu electrònic info@esquitxsbd.org" data-ga="click" data-ga-action="link">info@esquitxsbd.org</a></li>
+	     					<li><i class="fa fa-phone"></i> <a href="tel:+34937257793" title="Telèfon 93 725 77 93" data-ga="click" data-ga-action="link">93 725 77 93</a></li>
+		    				<li><i class="fa fa-map-marker"></i> <a href="https://www.google.com/maps/dir//Carrer+de+Turina,+44,+08206+Sabadell,+Barcelona,+Espanya/@41.5503777,2.0814309,17z" target="_blank" title="Com arribar a c\Turina 44-46, Sabadell (Barcelona)" data-ga="click" data-ga-action="link">c\Turina 44-46, Sabadell</a></li>
+		    			</ul>
+		    		</div>
+		    	</div>
+			</section>
+
+			<!-- Formulari de contacte -->
+			<section>
+				<div class="row separated-top-x2">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+						<div id="resposta-content"></div>
+						<form id="formulariContacte" data-toggle="validator" role="form">
+							<div class="form-group text-left">
+								<label for="inputNom" class="control-label">Nom i cognom</label>
+								<input type="nom" class="form-control" id="inputNom" placeholder="Nom" required>
+							</div>
+							<div class="form-group text-left">
+								<label for="inputEmail" class="control-label">Correu electrònic</label>
+								<input type="email" class="form-control" id="inputEmail" placeholder="Correu electrònic" required>
+							</div>
+							<div class="form-group text-left">
+								<label for="textareaMissatge">Missatge</label>
+								<textarea class="form-control" id="textareaMissatge" rows="3"></textarea>
+							</div>
+							<div class="form-group text-left">
+								<div class="g-recaptcha" data-sitekey="${process.env.APIKEYRECAPTCHA}" data-callback="verifyCaptcha"></div>
+								<div id="g-recaptcha-error"></div>
+							</div>
+							<button type="submit">Enviar</button>
+						</form>
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Mapa -->
+		<div id="mapid" style="height:400px;width:100%"></div>
+
+		<!-- Xarxes socials -->
+		<div id="xarxes-socials" class="container-fluid text-center">
+			<section>
+				<h2 class="text-center">Segueix l'Esquitx a les xarxes!</h2>
+				<div class="row social-icons">
+		    		<div class="col-sm-12 text-center">
+		    			<a id="facebook-esquitx" href="https://www.facebook.com/esquitxsbd/" target="_blank" title="Facebook www.facebook.com/esquitxsbd" data-ga="click" data-ga-action="link"><i class="fa facebook fa-facebook-official"></i></a>
+		    			<a id="twitter-esquitx" href="https://twitter.com/esquitx" target="_blank" title="Twitter @esquitx"><i class="fa twitter fa-twitter-square" data-ga="click" data-ga-action="link"></i></a>
+		    			<a id="instagram-esquitx" href="https://www.instagram.com/esquitx_sbd/" target="_blank" title="Instagram @esquitx_sbd" data-ga="click" data-ga-action="link"><i class="fa instagam fa-instagram"></i></a>
+		    		</div>
+		    	</div>
+		    </section>
+	    </div>
+
+	    <!-- Twitter -->
+		<div id="twitter" class="container-fluid colored text-center">
+			<section>
+				<!--<h2><i class="fa fa-twitter twitter" aria-hidden="true"></i> #KmSolidari @esquitx</h2>-->
+				<div id="twitter-carrusel" class="carousel slide separated-top text-center" data-ride="carousel">
+				  
+					<div id="twitter-content" class="carousel-inner" role="listbox">						
+						<div class="item active"><div id="twitter-loader" class="loader hidden"></div></div>
+					</div>
+
+					<a class="left carousel-control" href="#twitter-carrusel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Anterior</span>
+					</a>
+					<a class="right carousel-control" href="#twitter-carrusel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Següent</span>
+					</a>
+				</div>
+			</section>
+		</div>
+
+		<!-- Cercador -->
+	    <div id="buscador" class="container-fluid">
+		   <section>
+				<h2 class="text-center">No has trobat el què buscaves?</h2>
+				<div id="buscador-formulari" class="row text-center">
+					<input id="q" type="text">
+					<button id="search">Buscar</button>
+				</div>
+				<div id="buscador-content" class="row"></div>
+			</section>
+		</div>
+	</main>
+
+	<footer id="footer" class="text-center">
+		<ul class="list-unstyled list-inline">
+			<li><a href="http://www.esquitxsbd.org" title="Associació Juvenil Esquitx" data-ga="click" data-ga-action="link" target="_blank">Associació Juvenil Esquitx</a></li>
+			<li><a href="avislegal.html" title="Avís legal" data-ga="click" data-ga-action="link">Avís legal</a></li>
+			<li><a href="politicaprivacitat.html" title="Política Privacitat" data-ga="click" data-ga-action="link">Política Privacitat</a></li>
+			<li>© 2018 pàgina web creada per Jordi Pi <i class="fa github fa-github"></i> <a href="https://github.com/jordisabadell/kilometresolidari-project" target="_blank" title="GitHub jordisabadell" data-ga="click" data-ga-action="link">GitHub</a></li>
+		</ul>
+	</footer>
+
+  <!--disabled
+	<span id="float-button" class="hidden">
+   		<a id="share-btn" href="https://www.migranodearena.org/reto/18664/mou-te-per-lesquitx-kilometre-solidari-2018" target="_blank" data-ga="click" data-ga-action="link" data-ga-label="Compra" data-ga-category="Float button"><i class="btn btn-float fa fa-shopping-cart"></i></a>
+	</span>
+	-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="https://use.fontawesome.com/f0f358dacc.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/unveil/1.3.0/jquery.unveil.min.js" type="text/javascript"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.min.js' type="text/javascript"></script>
+	<!--<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b1bf2be4264b0a4" type="text/javascript"></script>-->
+
+	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>	
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</body>
+</html> 

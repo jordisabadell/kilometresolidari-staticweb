@@ -1,0 +1,224 @@
+/* ----- Jumbotron ----- */
+#jumbotron {
+    background-image: url("/assets/images/cover-min.jpg") ;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: #fff;
+
+    padding: 200px 0px 100px 0px;
+
+    h1 {
+        padding-bottom: 12px;
+    }
+
+    .title {
+        font-size: 36px;
+        line-height: 1.3;
+    }
+    .highlight {
+        display: inline;
+        background-color: $background-highlight;
+    }
+    
+    @media only screen and (min-width : 768px) {
+        padding: 250px 0px 150px 0px;
+    }
+    @media only screen and (min-width : 1200px) {
+        padding: 300px 0px 200px 0px;
+    }
+}
+
+/* ----- Edició actual ----- */
+#info {
+    #mes-info-content li {
+        text-align: center;
+    }
+}
+
+/* ----- Dades ----- */
+#dades {
+    img {
+        padding: 12px 0px 12px 0px;
+    }
+    .numero {
+        padding: 0px;
+        display: block;
+
+        font-family: "Helvetica Neue",sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 44px;
+    }
+    .grafic {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .grafic > div {
+        max-width: 500px;
+        margin: auto;
+    }
+}
+
+/* ----- Fotos ----- */
+#fotos {
+    figure {
+        margin-top: 20px;
+    }
+    img.gallery-img {
+        width: 100%;
+        @include shadow;
+    }
+}
+
+/* ----- Guia ----- */
+#guia {
+    figure.video {
+        width: 100%;
+        margin: auto;
+
+        @include shadow;
+    }
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+    }
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ----- Experiències ----- */
+#experiencies {
+    .panel-default {
+        border-left: 2px solid #333;
+        border-radius: 0px;
+        @include shadow;
+    }
+    .media-heading {
+        font-weight: bold;
+    }
+    img {
+        width: 80px;
+        border-radius: 40px;
+    }
+    .modal-title {
+        font-weight: bold;
+        float: left;
+    }
+    @media only screen and (min-width : 768px) {
+        img {
+            width: 120px;
+            border-radius: 60px;
+        }
+        .modal-body {
+            padding: 20px 40px 40px 40px;
+        }
+        .modal-dialog {
+            width: 80%;
+            margin: 5% auto;
+        }
+    }
+    & button.close {
+        margin-top: 6px;
+    }
+}
+
+/* ----- Twitter ------ */
+#twitter {
+    #{$a-tags} {
+        text-decoration: none;
+    }
+
+    .profile {
+        & img {
+            border-radius: 25px;
+            margin-right: 12px; 
+        }
+        & span {
+            font-weight: bold;
+        }
+    }
+    .tweet {
+       font-style: italic;
+    }
+}
+
+/* ----- Llibre ----- */
+#llibre {
+    img {
+        width: 200px;
+        border: 1px solid #999;
+        @include shadow;
+    }
+}
+
+/* ----- Contacte ----- */
+#contacte {
+    .row.contacte {
+        li {
+            display: block;
+            padding: 0px 6px 0px 6px;
+
+            @media only screen and (min-width : 768px) {
+                display: inline;
+            }
+
+            i.fa {
+                padding-right: 6px;
+            }
+        }
+    }
+}
+
+/* ----- Xarxes socials ----- */
+#xarxes-socials {
+    .row.social-icons {
+        margin-top: 16px;
+        margin-bottom: 32px;
+
+        .fa {
+            font-size: 60px;
+            padding-left: 10px;
+            padding-right: 10px;    
+        }    
+    }
+}
+
+#buscador {
+
+    #buscador-formulari {
+    }
+    
+    #buscador-content {
+        
+        &>div {
+            padding-top: 50px;
+        }
+
+        span.title {
+            display: block;
+            color: $main-color;
+        }
+        span.link {
+            display: block;
+            color: $button-color;
+            line-height: 1.2;
+            font-size: 14px;
+        }
+        span.snippet {
+            display: block;
+            padding-bottom: 20px;
+            line-height: 1.2;
+            font-size: 14px;
+            color: #666;
+        }
+    }
+}

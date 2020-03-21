@@ -1,0 +1,408 @@
+body {
+    font: 400 18px Lato, sans-serif;
+    color: $font-color;
+    line-height: 1.6;
+}
+h1 {
+    margin: 0px;
+    padding-bottom: 32px;
+    
+    font-size: 24px;
+}
+h2 {
+    margin: 0px;
+    padding-bottom: 16px;
+    
+    font-size: 32px;
+}
+h3 {
+    margin: 0px;
+    padding-bottom: 8px;
+    
+    font-size: 24px;
+}
+
+span.line {
+    display: block;
+}
+
+#{$a-tags} {
+    color: $font-color;
+    text-decoration: underline;
+
+    .fa {
+        text-decoration: none; //awesome icons
+    }
+}
+a.btn, a.btn:link, a.btn:hover, a.btn:visited, a.btn:active {
+    text-decoration: none;
+}
+ul {
+    padding: 0; //-webkit-padding-start: 40px problem
+}
+ul.list {
+	li {
+		padding: 6px 0px 6px 0px;
+	}
+}
+.noscroll { 
+    overflow: hidden; 
+}
+.transparent {
+    opacity: 0!important;
+}
+.hidden {
+    display: none!important;
+}
+[aria-hidden="true"] { 
+    display: none; 
+}
+[aria-hidden="false"] { 
+    display: block; 
+}
+/* Google Map issue fix */
+.gm-style [aria-hidden='true'] {
+ display: block;
+ display: initial;
+}
+.separated-top {
+    padding-top: 16px;
+}
+.separated-top-x2 {
+    padding-top: 32px;
+}
+.separated-top-x3 {
+    padding-top: 48px;
+}
+.separated-right {
+    padding-right: 6px;
+}
+.separated-left {
+    padding-left: 6px;
+}
+
+/* ----- OTHERS ----- */
+
+/* Social media colors */
+.facebook {
+    color: #3b5998;    
+}
+.twitter {
+    color: #00aced;
+}
+.instagam {
+    color: #e1306c;
+}
+
+/* Buttons */
+i.btn {
+    width: 45px;
+    height: 45px;
+    padding-top: 12px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+
+    @media only screen and (min-width : 768px) {
+        width: 50px;
+        height: 50px;
+        padding-top: 15px;
+    }
+}
+.btn-main {
+    color: #fff!important;
+    background-color: $button-color;
+    border-radius: 50px;
+    border: 3px solid #fff;
+    padding: 12px 24px 12px 24px!important;
+
+    i {
+        padding-right: 4px;
+    }
+}
+.btn-main:hover {
+    background-color: $button-color-hover;
+
+    i {
+        color: #fff!important;
+    }
+}
+.btn-secondary {
+    color: #fff!important;
+
+    i {
+        padding-right: 4px;
+    }
+}
+.btn-secondary:hover {
+}
+.btn-facebook {
+    background-color: #3b5998;
+    color: #fff;
+}
+.btn-facebook:hover {
+    background-color: #2C4985;
+    color: #fff;
+}   
+.btn-twitter {
+    background-color: #1da1f2;
+    color: #fff;
+}
+.btn-twitter:hover {
+    background-color: #1591DD;
+    color: #fff;
+}
+.btn-googleplus {
+    background-color: #ea4335;
+    color: #fff;
+}
+.btn-googleplus:hover {
+    background-color: #DD3B2E;
+    color: #fff;
+}
+.btn-whatsapp {
+    background-color: #1D9D10;
+    color: #fff;   
+}
+.btn-whatsapp:hover {
+    background-color: #1D9D10;
+    color: #fff;
+}
+li.whatsapp {
+    @media only screen and (min-width : 768px) {
+        display: none!important; /* hide whatsapp on desktop */
+    }
+}
+.btn-linkedin {
+    background-color: #0077b5;
+    color: #fff;
+}
+.btn-linkedin:hover {
+    background-color: #00699F;
+    color: #fff;
+}
+.btn-float {
+    background-color: $button-color;
+    color: #fff;
+}
+.btn-float:hover {
+    background-color: $button-color-hover;
+    color: #fff;
+}
+
+/* Float button */
+#float-button.affix {
+    position: fixed;
+    margin: auto;
+    bottom: 68px;
+    right: 8px;
+    z-index: 1000998;
+    
+    @media only screen and (min-width : 980px) { /* Add-this plugin */
+        bottom: 3%;
+        right: 3%;
+    }
+
+    i {
+        border: 2px solid #fff;
+    }
+}
+
+/* Scroll */
+.carousel-inner {
+    width: 80%;
+    margin: 0 auto;
+
+    @media only screen and (min-width : 768px) {
+        &{
+            width: 70%;
+        }
+    }
+    @media only screen and (min-width : 1200px) {
+        &{
+            width: 60%;
+        }
+    }
+}
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #ccc;
+}
+.carousel-indicators li {
+    border-color: #ccc;
+}
+.carousel-indicators li.active {
+    background-color: #ccc;
+}
+
+/* Youtube */
+.youtube {
+    background-color: #000;
+    margin-bottom: 30px;
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.youtube img {
+    width: 100%;
+    top: -16.84%;
+    left: 0;
+}
+.youtube .play-button {
+    width: 90px;
+    height: 60px;
+    background-color: #333;
+    box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+    z-index: 1;
+    opacity: 0.8;
+    border-radius: 6px;
+}
+.youtube .play-button:before {
+    content: "";
+    border-style: solid;
+    border-width: 15px 0 15px 26.0px;
+    border-color: transparent transparent transparent #fff;
+}
+.youtube img,
+.youtube .play-button {
+    cursor: pointer;
+}
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+    position: absolute;
+}
+.youtube .play-button,
+.youtube .play-button:before {
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -50%, 0 );
+}
+.youtube iframe {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #333;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+div.colored .loader {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top: 2px solid #333;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Bootstrap column center */
+.col-xs-left, .col-left {
+    text-align: left; 
+}
+.col-xs-center, .col-center {
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+.col-xs-right, .col-right {
+    text-align: right; 
+}
+
+@media (min-width: 768px) {  
+    .col-sm-left {
+        text-align: left; 
+    }
+    .col-sm-center {
+        display: block;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .col-sm-right {
+        text-align: right; 
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-left {
+        text-align: left; 
+    }
+    .col-md-center {
+        display: block;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .col-md-right {
+       text-align: right; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-left {
+        text-align: left; 
+    }
+    .col-lg-center {
+        display: block;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .col-lg-right {
+        text-align: right; 
+    }
+}
+
+
+
+
+/*==========  Mobile First Method  ==========*/
+
+ /* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    
+}

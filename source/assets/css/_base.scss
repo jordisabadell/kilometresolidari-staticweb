@@ -1,0 +1,18 @@
+$main-color: #18a79d;
+$main-color-hover: #84c2ba;
+$background-highlight: #18a79d;
+
+$font-color: #000;
+
+$button-color: #b63c8b;
+$button-color-hover: #bc4393;
+
+$a-tags: 'a, a:link, a:visited, a:active, a:hover';	
+
+@mixin shadow {
+    box-shadow: 2px 2px 3px #ccc;
+    -webkit-box-shadow: 2px 2px 3px #ccc;
+    -moz-box-shadow: 2px 2px 3px #ccc;
+    -ms-box-shadow: 2px 2px 3px #ccc;
+    -o-box-shadow: 2px 2px 3px #ccc;
+}
