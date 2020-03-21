@@ -105,6 +105,7 @@ firebase login:ci
 ### Shell script Git permisions
 ```
 git update-index --chmod=+x build.sh
+git commit -am "Update file permission"
 ```
 
 ### Set environment variables
