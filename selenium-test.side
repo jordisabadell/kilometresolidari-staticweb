@@ -1,0 +1,111 @@
+{
+  "id": "fb61f77a-a5cf-47ee-8da5-a7eb7cf89717",
+  "version": "2.0",
+  "name": "selenium-test",
+  "url": "https://kilometresolidari-static-web.firebaseapp.com/",
+  "tests": [{
+    "id": "27dbf1a6-36a4-4902-8464-4cdcda13f0a5",
+    "name": "Untitled",
+    "commands": [{
+      "id": "4735c757-b497-4115-a6a6-6678ad0e69bc",
+      "comment": "",
+      "command": "open",
+      "target": "https://kilometresolidari-static-web.firebaseapp.com/?action=test",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a69763fb-022c-4c08-b8c8-bd4c768a947f",
+      "comment": "",
+      "command": "//open",
+      "target": "http://localhost:8080/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "721f445c-f527-4bb1-96c7-0995307e5f52",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.title > .highlight",
+      "targets": [
+        ["css=.highlight", "css:finder"],
+        ["xpath=//div[@id='jumbotron']/section/header/p/span", "xpath:idRelative"],
+        ["xpath=//p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'5 anys, 20.000€. Moltes gràcies!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b4f13af-8be9-4d33-8359-0e438fc1c490",
+      "comment": "",
+      "command": "click",
+      "target": "id=menu",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56d6c49a-1a21-4288-9e38-78ce40b102e9",
+      "comment": "",
+      "command": "click",
+      "target": "id=menu_fotos",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e90fb6b5-b1fd-4bd2-a76a-9b51b55f1a57",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-6:nth-child(2) .gallery-img",
+      "targets": [
+        ["css=.col-sm-6:nth-child(2) .gallery-img", "css:finder"],
+        ["xpath=//img[@alt='Cursa de la Festa Major de Sabadell 2015 - Kilòmetre Solidari Associació Juvenil Esquitx']", "xpath:img"],
+        ["xpath=//div[@id='fotos']/section/div[2]/div[2]/figure/a/img", "xpath:idRelative"],
+        ["xpath=//div[2]/figure/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c961fccf-6b96-4aca-90f2-5a8e5a6abf65",
+      "comment": "",
+      "command": "click",
+      "target": "css=.lb-close",
+      "targets": [
+        ["css=.lb-close", "css:finder"],
+        ["xpath=//div[@id='lightbox']/div[2]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ead9115e-d0b2-4ea4-9dcf-8f2ebe6c709c",
+      "comment": "",
+      "command": "click",
+      "target": "id=q",
+      "targets": [
+        ["id=q", "id"],
+        ["css=#q", "css:finder"],
+        ["xpath=//input[@id='q']", "xpath:attributes"],
+        ["xpath=//div[@id='buscador-formulari']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1864808e-5de4-4a88-bbbc-613a31d1d5f0",
+      "comment": "",
+      "command": "type",
+      "target": "id=q",
+      "targets": [],
+      "value": "jordi"
+    }, {
+      "id": "40d463f3-c898-4fa8-839f-bc50b83f5f25",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9ad3e0b1-57ef-4e94-8f43-31c9803d4c3e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["27dbf1a6-36a4-4902-8464-4cdcda13f0a5"]
+  }],
+  "urls": ["https://www.kilometresolidari.cat/", "https://kilometresolidari-static-web.firebaseapp.com/"],
+  "plugins": []
+}
