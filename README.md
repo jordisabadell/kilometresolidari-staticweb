@@ -134,6 +134,8 @@ firebase deploy
 ### Git: pull
 Download reporitory
 ```
+mkdir kilometresolidari-staticweb
+cd kilometresolidari-staticweb
 git init
 git remote add origin https://github.com/jordisabadell/kilometresolidari-staticweb
 git pull origin master
