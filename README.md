@@ -45,14 +45,14 @@ Static web page. It built with webpack module bundler and it deploy in CI/CD env
 - Google Firebase (https://console.firebase.google.com/)
 
 ## Tools and performance
-- Web Manifest generator (https://app-manifest.firebaseapp.com/)
+- Web Manifest generator (https://app-manifest.firebaseapp.com)
 - Fabicon generator (https://realfavicongenerator.net)
 - Compress JPEG (http://www.compressjpeg.com)
 - Google Cloud Platform (https://console.developers.google.com)
 - Google Lighthouse Chrome audit (https://developers.google.com/web/tools/lighthouse)
 - Google Page Speed (https://developers.google.com/speed/pagespeed/insights)
-- GitGuardian (https://app.gitguardian.com/)
-- Radar Nightfall (https://radar.nightfall.ai/)
+- Selenium ID (https://www.selenium.dev/selenium-ide)
+- GitGuardian (https://app.gitguardian.com)
 
 ---
 
