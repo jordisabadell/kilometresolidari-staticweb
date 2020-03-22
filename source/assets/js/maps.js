@@ -30,4 +30,8 @@ $(document).ready(function() {
 			}
 		}).addTo(mymap);
 	});
+
+	mymap.scrollWheelZoom.disable();
+	mymap.on('focus', () => { mymap.scrollWheelZoom.enable(); });
+	mymap.on('blur', () => { mymap.scrollWheelZoom.disable(); });
 });
