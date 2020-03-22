@@ -48,7 +48,7 @@ Static web page. It built with webpack module bundler and it deploy in CI/CD env
 - Web Manifest generator (https://app-manifest.firebaseapp.com)
 - Fabicon generator (https://realfavicongenerator.net)
 - Compress JPEG (http://www.compressjpeg.com)
-- geojson.io editor (http://geojson.io)
+- geojson.io Map editor (http://geojson.io)
 - Google Cloud Platform (https://console.developers.google.com)
 - Google Lighthouse Chrome audit (https://developers.google.com/web/tools/lighthouse)
 - Google Page Speed (https://developers.google.com/speed/pagespeed/insights)
