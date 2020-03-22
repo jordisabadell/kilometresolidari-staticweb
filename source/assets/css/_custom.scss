@@ -97,18 +97,33 @@
 
 /* ----- Experiències ----- */
 #experiencies {
+    .media {
+        background-color: #fff;
+        margin: 8px 0px 8px 0px;
+        
+        &>img {
+            padding: 4px;
+            width: 80px;
+            border-radius: 40px;
+        }
+
+        &>.media-body {
+            padding: 6px 4px 0px 4px;
+
+            &> h4 {
+                font-weight: bold;
+            }
+            &>p {
+                line-height: 1;
+            }
+        }
+    }
     .panel-default {
         border-left: 2px solid #333;
         border-radius: 0px;
         @include shadow;
     }
-    .media-heading {
-        font-weight: bold;
-    }
-    img {
-        width: 80px;
-        border-radius: 40px;
-    }
+    
     .modal-title {
         font-weight: bold;
         float: left;

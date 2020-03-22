@@ -5,7 +5,6 @@ body {
 }
 h1 {
     margin: 0px;
-    padding-bottom: 32px;
     
     font-size: 24px;
 }
@@ -224,9 +223,26 @@ li.whatsapp {
         }
     }
 }
-.carousel-control.right, .carousel-control.left {
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 40px;
+    width: 40px;
+    outline: #333;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid #333;
     background-image: none;
-    color: #ccc;
+    background-color: #999;
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 24px;
+  color: #333;
+}
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 24px;
+  color: #333;
 }
 .carousel-indicators li {
     border-color: #ccc;

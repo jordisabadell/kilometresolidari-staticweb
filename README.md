@@ -13,8 +13,8 @@ Static web page. It built with webpack module bundler and it deploy in CI/CD env
 ## Technology
 
 - HTML5/CSS3/JavaScript
-- jQuery 1.12.4 (https://jquery.com)
-- Bootstrap 3.3.7 (http://getbootstrap.com)
+- jQuery 3.4.1 (https://jquery.com)
+- Bootstrap 4.4.1 (http://getbootstrap.com)
 - Animate.css 3.5.2 (https://github.com/daneden/animate.css)
 - Crazyload 1.3 (http://luis-almeida.github.com/unveil)
 - Lightbox 2.9 (http://lokeshdhakar.com/projects/lightbox2)

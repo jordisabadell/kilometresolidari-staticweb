@@ -1,11 +1,11 @@
 $(document).ready(function() {
 	
 	//Float share button
-	if (($(window).height() + 100) < $(document).height() ) {
+	/*if (($(window).height() + 100) < $(document).height() ) {
 		$('#float-button').removeClass('hidden').affix({
 		    offset: {top:100}
 		});
-	}
+	}*/
 
 	//Lazyload
   	$("img").unveil();

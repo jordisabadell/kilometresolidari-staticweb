@@ -21,11 +21,9 @@ window.loadWordpressPost = function loadWordpressPost() {
 			  				'<div class="panel panel-default ' + animated + '">' +
 		  						'<div class="panel-body">' +
 					  				'<div class="media">' + 
-										'<div class="media-left img-rounded-wrapper">' +
-											'<img src="' + thumbnail + '" alt="' + autor + '" title="' + autor + '" class="media-object">' +
-										'</div>' +
-										'<div class="media-body media-middle">' +
-											'<h4 class="media-heading small">' + autor + '</h4>' +
+										'<img src="' + thumbnail + '" alt="' + autor + '" title="' + autor + '" class="mr-3">' +
+										'<div class="media-body">' +
+											'<h4 class="mt-0 small">' + autor + '</h4>' +
 											'<p class="small"><a href="#" title="Enllaç a l\'experiència ' + title + '" data-ga="click" data-ga-action="link" data-toggle="modal" data-target="#experiencia' + id + '">' + title + '</a></p>' +
 										'</div>' +
 									'</div>' + 

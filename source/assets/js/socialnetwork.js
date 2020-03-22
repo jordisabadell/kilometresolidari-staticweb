@@ -5,7 +5,7 @@ window.loadTwitterTimeline = function loadTwitterTimeline() {
 	  	if(data && data.length>0) {
 
 			$.each( data, function(key, val) {
-		  	var class_=(key==0)?'item active':'item';
+		  	var class_=(key==0)?'carousel-item active':'carousel-item';
 
 			var date_ = prettyDate(val.created_at); 
 			
