@@ -6,7 +6,7 @@ http://www.kilometresolidari.cat
 Static web page. It built with webpack module bundler and it deploy in CI/CD environment using GitHub, Travis CI and Firbase cloud hosting.
 
 
-![Image description](doc/cicd_environment_diagram.png)
+![Image description](docs/architecture_diagram.png)
 
 ---
  
