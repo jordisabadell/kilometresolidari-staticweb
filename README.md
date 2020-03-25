@@ -3,38 +3,40 @@
 **A web of Kilòmetre Solidari Project** :rocket:  
 http://www.kilometresolidari.cat
 
-Static web page. It built with webpack module bundler and it deploy in CI/CD environment using GitHub, Travis CI and Firbase cloud hosting.
+Static web page. It has been built with Webpack module bundler and it deploy in CI/CD environment using GitHub, Travis CI and Firebase cloud hosting.
 
 
-![Image description](docs/architecture_diagram.png)
+**Technology description**
+
+![Image description](docs/technology_description.png)
+
+**Continuous integration /Continuous delivery (CI/CD)**
+
+![Image description](docs/continuous_integration_delivery_diagram.png)
 
 ---
  
 ## Technology
+HTML, CSS and Javascript.
 
-- HTML5/CSS3/JavaScript
+### Frameworks, libraries, plugins and resources
 - jQuery 3.4.1 (https://jquery.com)
 - Bootstrap 4.4.1 (http://getbootstrap.com)
-- Animate.css 3.5.2 (https://github.com/daneden/animate.css)
-- Crazyload 1.3 (http://luis-almeida.github.com/unveil)
-- Lightbox 2.9 (http://lokeshdhakar.com/projects/lightbox2)
-- CountUp.js1.8.2 (https://inorganik.github.io/countUp.js)
 - Highcharts 5.0.10 (https://www.highcharts.com)
 - TimelineJS (https://timeline.knightlab.com)
-- Awesome Font icons 4.7 (http://fontawesome.io/icons)
-- ~~Google Maps (https://developers.google.com/maps)~~
 - Leaflet Maps (https://leafletjs.com)
 - OpenStreetMaps (https://www.openstreetmap.org)
-- Google reCaptcha v2 (https://www.google.com/recaptcha/)
+- Google reCaptcha (https://www.google.com/recaptcha/)
 - Google Custom Search (https://developers.google.com/custom-search)
+- Google Firebase Realtime Database (https://firebase.google.com/docs/database/)
 - Google Analytics (https://developers.google.com/analytics)
-
-## Plugins
+- Animate.css 3.5.2 (https://github.com/daneden/animate.css)
+- CountUp.js 1.8.2 (https://inorganik.github.io/countUp.js)
+- Crazyload 1.3 (http://luis-almeida.github.com/unveil)
+- Lightbox 2.9 (http://lokeshdhakar.com/projects/lightbox2)
 - Add This (https://www.addthis.com)
 - Quantcast GDPR (https://www.quantcast.com/gdpr/consent-management-solution/)
-
-## Function as a Services (FaaS)
-- Google Firebase Realtime Database (https://firebase.google.com/docs/database/)
+- Awesome Font icons 4.7 (http://fontawesome.io/icons)
 
 ## Environment 
 - NodeJS (https://nodejs.org/)
@@ -42,7 +44,7 @@ Static web page. It built with webpack module bundler and it deploy in CI/CD env
 - Visual Studio Code (https://code.visualstudio.com/)
 - GitHub (https://github.com/)
 - TravisCI (https://travis-ci.com/)
-- Google Firebase (https://console.firebase.google.com/)
+- Google Firebase hosting (https://console.firebase.google.com/)
 
 ## Tools and performance
 - Web Manifest generator (https://app-manifest.firebaseapp.com)
@@ -54,6 +56,25 @@ Static web page. It built with webpack module bundler and it deploy in CI/CD env
 - Google Page Speed (https://developers.google.com/speed/pagespeed/insights)
 - Selenium ID (https://www.selenium.dev/selenium-ide)
 - GitGuardian (https://app.gitguardian.com)
+
+---
+
+## Challanges
+This static web has been created from the following challenges.
+
+- [x] Create a PWA static web page.
+- [x] Use module bundler. I started with Grunt, and then I migrated to Webpack (see previous Grunt project at [kilometresolidari-staticweb__deprecated](https://github.com/jordisabadell/kilometresolidari-staticweb__deprecated))
+- [x] Create a stylesheet using Bootstrap and Sass language. I started with Bootstrap 3, and I updated the web to 4.
+- [x] Use some third party plugins like Highcharts, TimelineJS :x:, Lightbox, AddThis :x: or Quantcast :x:.
+- [x] Use some javascript efects like CountUp.js and Animate.css
+- [x] Improve the load of the web using minify JS and css files, critical CSS :x: and lazy load techiques and performance tools (Google Lighthouse and Page Speed).
+- [x] Find an alternative on Google Maps: it's Leaflet Maps and OpenStreetMaps. Load GeoJSON files. 
+- [x] Load content from third party servers like custom Wordpress (via JSON API plugin, see at [/jordisabadell-wordpress](https://github.com/jordisabadell/jordisabadell-wordpress)), Twitter or Google Custom Search Engine.
+- [x] Inject data, using functions as a services (FaaS), to Firebase Realtime Database.
+- [x] Secure relational operations using a captcha. I started with Google reCaptcha v2 and then I migrate to v3 :x: (see backend at [kilometresolidari-php-scripts](https://github.com/jordisabadell/kilometresolidari-php-scripts)).
+- [ ] Receive push notification from Firebase.
+- [x] Automate tests using Selenium IDE.
+- [x] Automate deploy from GitHub to Google Firebase cloud hosting. Using travis and preserve APIKEYs on GitHub, using GitGuardian.
 
 ---
 
