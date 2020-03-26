@@ -177,6 +177,11 @@ git fetch origin
 git reset --hard origin/master
 ```
 
+Reset reverse last commit
+```
+git reset --hard HEAD~1
+```
+
 ### Git: Remove sensitive data
 Download BFG Repo-Cleaner and copy to {BFG_PATH}. I.e: 'c:\tmp'
 https://rtyley.github.io/bfg-repo-cleaner/
