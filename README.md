@@ -177,7 +177,7 @@ git fetch origin
 git reset --hard origin/master
 ```
 
-Reset reverse last commit
+Undo last commit
 ```
 git reset --hard HEAD~1
 ```
