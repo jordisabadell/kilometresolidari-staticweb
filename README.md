@@ -1,7 +1,7 @@
 # Kilòmetre Solidari (static web)
 
 **A web of Kilòmetre Solidari Project** :rocket:  
-http://www.kilometresolidari.cat/esquitx
+https://www.kilometresolidari.cat/esquitx
 
 Static web page. It has been built with Webpack module bundler and it deploy in CI/CD environment using GitHub, Travis CI and Firebase cloud hosting.
 
