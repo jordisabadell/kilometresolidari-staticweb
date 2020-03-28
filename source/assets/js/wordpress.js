@@ -14,7 +14,7 @@ window.loadWordpressPost = function loadWordpressPost() {
 		$.getJSON("data/reflections.json", function(data) {
 			$.each(data, function(key, val) {
 				
-				var title = val.title.rendered;
+				var title = val.acf.title;
 				if(title!='') {
 					var id = val.id;
 					var thumbnail = (val.thumbnail!==undefined)?val.thumbnail:'';
@@ -28,7 +28,7 @@ window.loadWordpressPost = function loadWordpressPost() {
 								'<div class="media">' + 
 									//'<img src="' + thumbnail + '" alt="' + author + '" title="' + author + '" class="mr-3">' +
 									'<div class="media-body">' +
-										'<h4 class="mt-0 small">' + author + '</h4>' +
+										'<h4 class="mt-0">' + author + '</h4>' +
 										'<p class="small"><a href="#" title="Enllaç a l\'experiència ' + title + '" data-ga="click" data-ga-action="link" data-toggle="modal" data-target="#experiencia' + id + '">' + title + '</a></p>' +
 									'</div>' +
 								'</div>' + 
