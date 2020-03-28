@@ -75,6 +75,7 @@ This static web has been created from the following challenges.
 - [ ] Receive push notification from Firebase.
 - [x] Automate tests using Selenium IDE.
 - [x] Automate deploy from GitHub to Google Firebase cloud hosting. Using travis and preserve APIKEYs on GitHub, using GitGuardian.
+- [ ] Solve CORS domain Wordpres API call.
 
 ---
 
