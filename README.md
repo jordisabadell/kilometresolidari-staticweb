@@ -71,7 +71,7 @@ This static web has been created from the following challenges.
 - [x] Find an alternative on Google Maps: it's Leaflet Maps and OpenStreetMaps. Load GeoJSON files. 
 - [x] Load content from third party servers like custom Wordpress (via JSON API plugin, see at [/jordisabadell-wordpress](https://github.com/jordisabadell/jordisabadell-wordpress)), Twitter or Google Custom Search Engine.
 - [x] Inject data, using functions as a services (FaaS), to Firebase Realtime Database.
-- [x] Secure relational operations using a captcha. I started with Google reCaptcha v2 and then I migrate to v3 :x: (see backend at [kilometresolidari-php-scripts](https://github.com/jordisabadell/kilometresolidari-php-scripts)).
+- [x] Secure relational operations using a captcha. I started with Google reCaptcha v2 and then I migrate to v3 (see backend at [kilometresolidari-php-scripts](https://github.com/jordisabadell/kilometresolidari-php-scripts)).
 - [ ] Receive push notification from Firebase.
 - [x] Automate tests using Selenium IDE.
 - [x] Automate deploy from GitHub to Google Firebase cloud hosting. Using travis and preserve APIKEYs on GitHub, using GitGuardian.
