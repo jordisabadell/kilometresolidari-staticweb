@@ -15,7 +15,6 @@ window.loadWordpressPost = function loadWordpressPost() {
 			$.each(data, function(key, val) {
 				
 				var title = val.title.rendered;
-				console.log(title);
 				if(title!='') {
 					var id = val.id;
 					var thumbnail = (val.thumbnail!==undefined)?val.thumbnail:'';
@@ -68,6 +67,5 @@ window.loadWordpressPost = function loadWordpressPost() {
 		});
 		$("#experiencies-loader").addClass("hidden");
 		$("#experiencies-content").html(html);
-		console.log("success");
 	});	
 }
