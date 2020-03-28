@@ -37,6 +37,8 @@ module.exports = {
       hash: true
     }),
     new CopyPlugin([
+      { from: 'source/avislegal.html', to: '' },
+      { from: 'source/politicaprivacitat.html', to: '' },
       { from: 'source/assets/images', to: 'assets/images' },
       { from: 'source/data', to: 'data' }
     ]),
