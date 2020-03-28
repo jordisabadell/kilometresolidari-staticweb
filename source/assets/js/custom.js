@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+  //Initialize reCaptcha v3
+  grecaptcha.ready(function() {
+    grecaptcha.execute(process.env.APIKEYRECAPTCHA, {action: 'homepage'}).then(function(token) {});
+  });
+
   $(".btn-anchor").each(function(key, value) {
       $(value).on('click', function(event) {
       if (this.hash !== "") {

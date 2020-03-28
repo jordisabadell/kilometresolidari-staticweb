@@ -454,10 +454,6 @@
 								<label for="textareaMissatge">Missatge</label>
 								<textarea class="form-control" id="textareaMissatge" rows="3"></textarea>
 							</div>
-							<div class="form-group text-left">
-								<div class="g-recaptcha" data-sitekey="${process.env.APIKEYRECAPTCHA}" data-callback="verifyCaptcha"></div>
-								<div id="g-recaptcha-error"></div>
-							</div>
 							<button type="submit">Enviar</button>
 						</form>
 					</div>
@@ -544,6 +540,6 @@
 	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>	
-	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=${process.env.APIKEYRECAPTCHA}"></script>
 </body>
 </html> 
