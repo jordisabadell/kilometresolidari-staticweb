@@ -2,8 +2,9 @@ window.loadTwitterTimeline = function loadTwitterTimeline() {
 
 	$.ajax({
 		type: 'GET',
-		url: 'https://jordisabadell.com/kilometresolidari/wp-json/wp/v2/reflection',
-		success: function(data) {				
+		url: 'https://jordisabadell.com/kilometresolidari/data/tweets.json',
+		success: function(data) {			
+			console.log(data);
 			$.each(data, function(key, val) {
 				var items = [];
 				if(data && data.length>0) {
