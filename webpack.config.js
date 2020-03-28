@@ -20,7 +20,6 @@ module.exports = {
       './source/assets/js/fb-contactform.js',
       './source/assets/js/ganalytics.js',
       './source/assets/js/gcs-search.js',
-      './source/assets/js/grecaptcha.js',
       './source/assets/js/layout.js',
       './source/assets/js/maps.js',
       './source/assets/js/navigation.js',
