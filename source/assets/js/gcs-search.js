@@ -7,7 +7,7 @@
             grecaptcha.execute(process.env.APIKEYRECAPTCHA, {action: 'search'}).then(function(token) {
 
 				$('#formulariContacte').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
-                $.post("http://kilometresolidari.cat/scripts/recaptcha-validation/validate-token.php",{token: token}, function(result) {
+                $.post("https://kilometresolidari.cat/scripts/recaptcha-validation/validate-token.php",{token: token}, function(result) {
 					if(result.success) {
 						console.log("reCaptcha v3 pass");
 
