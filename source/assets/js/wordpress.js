@@ -1,19 +1,12 @@
 window.loadWordpressPost = function loadWordpressPost() {
 
 	var items = [];
-		/*$.ajax({
-	    url: "//jordisabadell.com/kilometresolidari/wp-json/wp/v2/reflection", 
-	    jsonp: "callback",
-	    dataType: "jsonp",
-	 	success: function(data) {
-			if(data && data.posts) {
-			}
-	    error: function(error) {
-	    	console.log(error); //todo
-	    }*/
-		$.getJSON("data/reflections.json", function(data) {
+	$.ajax({
+		type: 'GET',
+		url: 'https://jordisabadell.com/kilometresolidari/wp-json/wp/v2/reflection',
+		success: function(data) {				
 			$.each(data, function(key, val) {
-				
+			
 				var title = val.acf.title;
 				if(title!='') {
 					var id = val.id;
@@ -58,14 +51,16 @@ window.loadWordpressPost = function loadWordpressPost() {
 							modal +
 						'</div>');
 				}
-			});
-		/*}*/
 
-		var html="";		
-		$.each(items, function(key, value) {
-			html+=value;
-		});
-		$("#experiencies-loader").addClass("hidden");
-		$("#experiencies-content").html(html);
-	});	
+				var html="";		
+				$.each(items, function(key, value) {
+					html+=value;
+				});
+				$("#experiencies-loader").addClass("hidden");
+				$("#experiencies-content").html(html);
+			});
+		}
+	}).fail(function() {
+		console.log("No s'ha pogut recuperar la informació de Wordpress");
+	});
 }
