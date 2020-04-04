@@ -183,27 +183,26 @@ git reset --hard HEAD~1
 ```
 
 ### Git: Remove sensitive data
-Download BFG Repo-Cleaner and copy to {BFG_PATH}. I.e: 'c:\tmp'
-https://rtyley.github.io/bfg-repo-cleaner/
+https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
 
-Pull
-```
-git pull --rebase
-```
+**Important:** The next git command will remove physically your file. Save your data before!
 
-Delete folders and files
+Remove:
 ```
-java -jar {BFG_PATH}/bfg-1.13.0.jar --delete-folders "dist"
-java -jar {BFG_PATH}/bfg-1.13.0.jar --delete-files ".env"
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch docs/diagrams.pptx" --prune-empty --tag-name-filter cat -- --all
 ```
 
-Update commits and tags
+Add file to **.gitignore**  
+
+Push:
 ```
-git reflog expire --expire=now --all && git gc --prune=now --aggressive
-git filter-branch -f --prune-empty --tag-name-filter cat -- --all
+git push origin --force --all
+git push origin --force --tags
 ```
 
-Push
+Commit **.gitignore** file:
 ```
-git push --force
+git add .
+git commit -m "Add *.pptx to gitignore"
+git push origin master
 ```
