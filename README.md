@@ -166,7 +166,8 @@ git pull origin master
 ### Git: commit and push
 Commit change and push on master
 ```
-git commit -m "Comment"
+git add .
+git commit -m "Your comment."
 git push origin
 ```
 
@@ -187,7 +188,7 @@ https://help.github.com/en/github/authenticating-to-github/removing-sensitive-da
 
 **Important:** The next git command will remove physically your file. Save your data before!
 
-Remove:
+Remove file and file history:
 ```
 git filter-branch --force --index-filter "git rm --cached --ignore-unmatch docs/diagrams.pptx" --prune-empty --tag-name-filter cat -- --all
 ```
@@ -200,7 +201,7 @@ git push origin --force --all
 git push origin --force --tags
 ```
 
-Commit **.gitignore** file:
+Commit **.gitignore**:
 ```
 git add .
 git commit -m "Add *.pptx to gitignore"
