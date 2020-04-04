@@ -59,7 +59,7 @@ HTML, CSS and Javascript.
 
 ---
 
-## Challanges
+## Challenges
 This static web has been created from the following challenges.
 
 - [x] Create a PWA static web page.
