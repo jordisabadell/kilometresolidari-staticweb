@@ -5,6 +5,9 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+var ContentReplacePlugin = require('content-replace-webpack-plugin');
+
+require('dotenv').config();
 
 module.exports = {
   output: {
@@ -16,8 +19,9 @@ module.exports = {
       './source/assets/js/index.js',
       './source/assets/js/utils.js',
       './source/assets/js/charts.js',
-      './source/assets/js/custom.js',
-      './source/assets/js/fb-contactform.js',
+      './source/assets/js/custom.js',      
+      './source/assets/js/fcm-pushnotification.js',
+      './source/assets/js/fdb-contactform.js',
       './source/assets/js/ganalytics.js',
       './source/assets/js/gcs-search.js',
       './source/assets/js/layout.js',
@@ -35,12 +39,6 @@ module.exports = {
       templateParameters: {},
       hash: true
     }),
-    new CopyPlugin([
-      { from: 'source/avislegal.html', to: '' },
-      { from: 'source/politicaprivacitat.html', to: '' },
-      { from: 'source/assets/images', to: 'assets/images' },
-      { from: 'source/data', to: 'data' }
-    ]),
     new MiniCSSExtractPlugin({
       filename: "./assets/css/style.css",
     }),
@@ -98,7 +96,17 @@ module.exports = {
       ]
     }),
     new WorkboxPlugin.GenerateSW(),
-    new Dotenv()
+    new Dotenv(),
+    new CopyPlugin([
+      { from: 'source/avislegal.html', to: '' },
+      { from: 'source/politicaprivacitat.html', to: '' },
+      { from: 'source/assets/images', to: 'assets/images' },
+      { from: 'source/firebase-messaging-sw.js', to: '', 
+          transform: function (content, path) {
+            return content.toString().replace('___APIKEYFIREBASE___', process.env.APIKEYFIREBASE);
+          }},
+      { from: 'source/data', to: 'data' }
+    ])   
   ],
   module: {
     rules: [

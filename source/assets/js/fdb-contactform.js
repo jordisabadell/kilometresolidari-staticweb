@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-    var firebaseConfig = {
+    /* ----------- load on fcm-pushnotification.js
+      var firebaseConfig = {
         apiKey: process.env.APIKEYFIREBASE,
         authDomain: "kilometresolidari-static-web.firebaseapp.com",
         databaseURL: "https://kilometresolidari-static-web.firebaseio.com",
@@ -11,8 +12,7 @@ $(document).ready(function() {
         measurementId: "G-QFHE8T259X"
     };
 
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+    firebase.initializeApp(firebaseConfig);*/
     
     $('#formulariContacte').submit(function (e) {
         e.preventDefault();
