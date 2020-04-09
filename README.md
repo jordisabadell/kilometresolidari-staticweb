@@ -132,10 +132,10 @@ git commit -am "Update file permission"
 
 ### Set environment variables
 Set the following *Environment Variables*:
-> APIKEYRECAPTCHA  
-> APIKEYFIREBASE  
-> APIKEYCUSTOMSEARCH  
-> FIREBASE_TOKEN
+> APIKEYRECAPTCHA
+> APIKEYFIREBASE
+> APIKEYCUSTOMSEARCH
+> SERVERKEYFCM
 
 ---
 
@@ -259,7 +259,8 @@ public static void main(String[] args) throws IOException {
   System.out.println(accessToken);
 }
 ```
-You'll get something like *ya29.c.Ko8Bx******FyD4OM*
+You'll get something like *ya29.c.Ko8Bx******FyD4OM*  
+See https://github.com/jordisabadell/example-firebasecloudmessaging-accesstoken
 
 ### 2. HTTP POST request
 You'll need:
@@ -285,7 +286,7 @@ Body (*raw* type):
     "token" : [your Instance ID Token],
     "notification": {
       "title": "Test message",
-      "body": "This is a test message from FCM."
+      "body": "This is a test message from Postman."
     },
     "webpush": {
       "fcm_options": {
@@ -320,7 +321,7 @@ Like example 'Send a test message using Postman'. You only have to replace 'toke
     "topic" : [your Topic name],
     "notification": {
       "title": "Test topic",
-      "body": "This is a test topic from FCM."
+      "body": "This is a test topic message from Postman."
     }
   }
 }
