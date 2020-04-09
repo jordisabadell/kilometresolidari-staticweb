@@ -265,7 +265,7 @@ See https://github.com/jordisabadell/example-firebasecloudmessaging-accesstoken
 
 ### 2. HTTP POST request
 You'll need:
-- **Project ID**: Get you *+Project Id** going to Firebase > Project settings > General > Project ID.
+- **Project ID**: Get you *Project Id** going to Firebase > Project settings > General > Project ID.
 - **Access token**: See previous step. 
 - **Instance ID Token**: Token generated on your website through the *messaging.getToken()* function.
 
@@ -301,7 +301,7 @@ Body (*raw* type):
 ## Subscribe user to a topic using Postman
 You'll need:
 - **Instance ID Token**: Token generated on your website through the *messaging.getToken()* function.
-- **Topic name**: whatever you want.
+- **Topic name**: Whatever you want.
 - **Server key**: Firebase > Project settings > Cloud Messaging > Server key
 
 URL call:
