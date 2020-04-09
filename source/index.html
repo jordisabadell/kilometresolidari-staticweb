@@ -202,29 +202,6 @@
 	</div>
 
 	<main>
-
-		<div id="token_div" style="display: none;">
-			<h4>Instance ID Token</h4>
-			<pre id="token"></pre>
-			<button onclick="copyToken()">Copy token</button>
-			<button onclick="deleteToken()">Delete Token</button>
-		  </div>
-	
-		  <div id="permission_div" style="display: none;">
-			<h4>Needs Permission</h4>
-			<pre id="token"></pre>
-			<button onclick="requestPermission()">Request Permission</button>
-		  </div>
-	
-		  <div>
-			<h4>Subscription</h4>
-			<pre id="subscription"></pre>
-			<input type="text" id="topicName" value="movies">
-			<button onclick="subscribeToTopic(document.getElementById('topicName').value)">Subscrive to topic</button>    
-		  </div>
-	
-		  <div id="messages"></div>
-
 		<!-- Jumbotron -->
 		<div id="jumbotron" class="text-center">
 			<section>
@@ -533,6 +510,8 @@
 				<div id="buscador-content"></div>
 			</section>
 		</div>
+
+		<div id="messages"></div>
 	</main>
 
 	<footer id="footer" class="text-center">

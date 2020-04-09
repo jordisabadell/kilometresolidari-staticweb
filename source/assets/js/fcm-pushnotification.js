@@ -22,6 +22,7 @@ $(document).ready(function() {
     messaging.onTokenRefresh(() => {
         messaging.getToken().then((refreshedToken) => {
             console.log('Token refreshed.');
+            console.log(currentToken);
             
             // Indicate that the new Instance ID token has not yet been sent to the app server.
             setTokenSentToServer(false);
@@ -33,7 +34,7 @@ $(document).ready(function() {
             resetUI();
 
         }).catch((err) => {
-            showMessage('#token', 'Unable to retrieve refreshed token ', err);
+            console.log('Unable to retrieve refreshed token. ', err);
         });
     });
 
@@ -53,26 +54,24 @@ $(document).ready(function() {
      */
     function resetUI() {
         clearMessages();
-        showMessage('#token', 'loading...');
-        showMessage('#subscription', "No subscribed.");
-        
+        console.log('loading...');
+
         // Get Instance ID token. Initially this makes a network call, once retrieved
         // subsequent calls to getToken will return from cache.
         messaging.getToken().then((currentToken) => {
             if (currentToken) {
                 console.log('Exists current token.');
+                console.log(currentToken);
                 
                 sendTokenToServer(currentToken);
-                showPushEnabled(currentToken);
             } else {
                 console.log('No Instance ID token available. Request permission to generate one.');
 
                 //Show permission request and sentToServer=0
-                showPushPermissionRequired();
                 setTokenSentToServer(false);
             }
         }).catch((err) => {
-            showMessage('#token', 'Error retrieving Instance ID token. ', err);
+            console.log('Error retrieving Instance ID token. ', err);
             setTokenSentToServer(false);
         });
     }
@@ -91,10 +90,13 @@ $(document).ready(function() {
         } else {
             console.log('Token already sent to server so won\'t send it again unless it changes.');
         }
+
+        // ¿Allways subscribes?
+        subscribeToTopic(currentToken, "kilometresolidari");
     }
 
     /**
-     * 
+     * Request permission.
      */
     function requestPermission() {
         console.log('Requesting permission...');
@@ -120,16 +122,16 @@ $(document).ready(function() {
         messaging.getToken().then((currentToken) => {
             messaging.deleteToken(currentToken).then(() => {
                 console.log('Token deleted.');
-                setTokenSentToServer(false);
                 
-                // Once token is deleted update UI.
+                setTokenSentToServer(false); // sentToServer=0
+
                 resetUI();
 
             }).catch((err) => {
                 console.log('Unable to delete token. ', err);
             });
         }).catch((err) => {
-            showMessage('#token', 'Error retrieving Instance ID token. ', err);
+            console.log('Error retrieving Instance ID token. ', err);
         });
     }
 
@@ -149,65 +151,24 @@ $(document).ready(function() {
     }
 
     /**
-     * Subscribe to topic
+     * Subscribe to topic.
+     * @param {string} currentToken
      * @param {string} topicName
      */
-    function subscribeToTopic(topicName) {
-        var token = document.querySelector('#token');
+    function subscribeToTopic(currentToken, topicName) {
 
-        $.ajax("https://iid.googleapis.com/iid/v1/"+token.textContent+"/rel/topics/"+topicName, {
+        $.ajax("https://iid.googleapis.com/iid/v1/"+currentToken+"/rel/topics/"+topicName, {
             type: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "key=<%=FCM_SERVERKEY%>"
+                "Authorization": "key="+process.env.SERVERKEYFCM
             }
         }).done(function (data) {
-            showMessage('#subscription', 'Subscription to topic \''+ topicName + '\' done!');
+            console.log('Subscription to topic \''+ topicName + '\' done!');
 
-        }).fail(function (xhr, status, error) {
-            showMessage('#subscription', 'Subscription to topic \''+ topicName + '\' error... ', error);
+        }).fail(function (xhr, status, err) {
+            console.log('Subscription to topic \''+ topicName + '\'.', err);
         });
-    }
-
-    /**
-     * Show message in console and UI.
-     * @param {string} element
-     * @param {string} value 
-     * @param {*} err
-     */
-    function showMessage(element, value, err) {
-
-        if(element!=undefined) {
-            var s = value;
-            if(err!=undefined) {
-                s += ' Error: ' + err;
-            }
-            console.log(s);
-
-            const tokenElement = document.querySelector(element);
-            tokenElement.textContent = s;
-        }
-        else {
-            console.log("¿¿element??");
-        }
-    }
-
-    /**
-     * Show token.
-     * @param {*} currentToken 
-     */
-    function showPushEnabled(currentToken) {
-        showDiv('token_div');
-        hideDiv('permission_div');
-        showMessage('#token', currentToken);
-    }
-
-    /**
-     * Show permission required.
-     */
-    function showPushPermissionRequired() {
-        hideDiv('token_div');
-        showDiv('permission_div');
     }
 
     /**
@@ -236,37 +197,6 @@ $(document).ready(function() {
                 messagesElement.removeChild(messagesElement.lastChild);
             }
         }
-    }
-
-    /**
-     * Show div. 
-     * @param {string} divId 
-     */
-    function showDiv(divId) {
-        const div = document.querySelector('#' + divId);
-        div.style = 'display: visible';
-    }
-
-    /**
-     * Hide div.
-     * @param {string} divId 
-     */
-    function hideDiv(divId) {
-        const div = document.querySelector('#' + divId);
-        div.style = 'display: none';
-    }
-
-    function copyToken() {
-        var token = document.querySelector('#token');
-        
-        //Create a temporal non visible textarea to copy token.
-        const textArea = document.createElement('textarea');
-        textArea.textContent = token.textContent;
-        textArea.style = "position: absolute;left: -100%;";
-        document.body.append(textArea);
-        textArea.select();
-        textArea.setSelectionRange(0, 99999)
-        document.execCommand("copy");
     }
 
     // Reset UI on page load.
