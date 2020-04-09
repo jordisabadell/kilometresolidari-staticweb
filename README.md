@@ -88,10 +88,10 @@ This static web has been created from the following challenges.
 
 ### Set environment variables
 Rename file *.env_EMTPY* to *.env* and set the following variables:
-> APIKEYRECAPTCHA=
-> APIKEYFIREBASE=
-> APIKEYCUSTOMSEARCH=
-> SERVERKEYFCM=
+> APIKEYRECAPTCHA=  
+> APIKEYFIREBASE=  
+> APIKEYCUSTOMSEARCH=  
+> SERVERKEYFCM=  
 
 ### Install tools and dependencies
 
@@ -133,10 +133,10 @@ git commit -am "Update file permission"
 
 ### Set environment variables
 Set the following *Environment Variables*:
-> APIKEYRECAPTCHA
-> APIKEYFIREBASE
-> APIKEYCUSTOMSEARCH
-> SERVERKEYFCM
+> APIKEYRECAPTCHA  
+> APIKEYFIREBASE  
+> APIKEYCUSTOMSEARCH  
+> SERVERKEYFCM  
 
 ---
 
