@@ -167,7 +167,7 @@ $(document).ready(function() {
             console.log('Subscription to topic \''+ topicName + '\' done!');
 
         }).fail(function (xhr, status, err) {
-            console.log('Subscription to topic \''+ topicName + '\'.', err);
+            console.log('Error subscribing to topic \''+ topicName + '\'.', err);
         });
     }
 
