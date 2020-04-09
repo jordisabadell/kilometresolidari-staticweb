@@ -265,7 +265,7 @@ See https://github.com/jordisabadell/example-firebasecloudmessaging-accesstoken
 
 ### 2. HTTP POST request
 You'll need:
-- **Project ID**: Get you *Project Id** going to Firebase > Project settings > General > Project ID.
+- **Project ID**: Get you *Project Id* going to Firebase > Project settings > General > Project ID.
 - **Access token**: See previous step. 
 - **Instance ID Token**: Token generated on your website through the *messaging.getToken()* function.
 
