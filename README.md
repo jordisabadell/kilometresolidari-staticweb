@@ -88,9 +88,10 @@ This static web has been created from the following challenges.
 
 ### Set environment variables
 Rename file *.env_EMTPY* to *.env* and set the following variables:
-> APIKEYRECAPTCHA=  
-> APIKEYFIREBASE=  
+> APIKEYRECAPTCHA=
+> APIKEYFIREBASE=
 > APIKEYCUSTOMSEARCH=
+> SERVERKEYFCM=
 
 ### Install tools and dependencies
 
