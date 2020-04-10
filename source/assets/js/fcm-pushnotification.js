@@ -18,7 +18,7 @@ $(document).ready(function() {
     // Retrieve Firebase Messaging object.
     const messaging = firebase.messaging.isSupported() ? firebase.messaging() : null
 
-    if(messaging!=null) {
+    if(messaging!=null) { //Prevent FirebaseError: Messaging: This browser doesn't support the API's required to use the firebase SDK. (messaging/unsupported-browser).
 
         // Callback fired if Instance ID token is updated.
         messaging.onTokenRefresh(() => {
