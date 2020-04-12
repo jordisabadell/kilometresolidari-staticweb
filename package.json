@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "builddev": "webpack --mode development",
+    "test": "testcafe chrome,firefox tests/index-test.js",
     "start": "webpack-dev-server --mode development --open"
   },
   "author": "@jordisabadell",
@@ -19,6 +20,7 @@
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
+    "testcafe": "^1.8.4",
     "webpack": "^4.32.1",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.10.3",

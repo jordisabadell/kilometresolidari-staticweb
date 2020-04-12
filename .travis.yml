@@ -1,4 +1,12 @@
-#.travis.yml
+dist: bionic
+
+addons:
+  firefox: latest
+  chrome: stable
+
+services:
+  - xvfb
+
 language: node_js
 node_js:
   - "12.16.1"
@@ -6,12 +14,18 @@ branches:
 only:
   - master
 before_script:
-  - npm install -g firebase-tools
+  
 script:
+  - npm install -g firebase-tools
   - ./build.sh $APIKEYRECAPTCHA $APIKEYFIREBASE $APIKEYCUSTOMSEARCH $SERVERKEYFCM
-  - npm run build 
-after_success:
+  - npm run build
   - firebase deploy --token $FIREBASE_TOKEN
+  - npm run test
+
+after_success:
+
+before_failure:
+  
 notifications:
   email: jordisabadell@gmail.com
   on_failure: always
