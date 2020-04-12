@@ -46,6 +46,7 @@ HTML, CSS and Javascript.
 - GitHub (https://github.com/)
 - TravisCI (https://travis-ci.com/)
 - Google Firebase hosting (https://console.firebase.google.com/)
+- TestCafe (https://devexpress.github.io/testcafe/)
 
 ## Tools and performance
 - Web Manifest generator (https://app-manifest.firebaseapp.com)
@@ -74,8 +75,9 @@ This static web has been created from the following challenges.
 - [x] Inject data, using functions as a services (FaaS), to Firebase Realtime Database.
 - [x] Secure relational operations using a captcha. I started with Google reCaptcha v2 and then I migrate to v3 (see backend at [kilometresolidari-php-scripts](https://github.com/jordisabadell/kilometresolidari-php-scripts)).
 - [x] Receive push notification from Firebase.
-- [x] Automate tests using Selenium IDE.
-- [x] Automate deploy from GitHub to Google Firebase cloud hosting. Using travis and preserve APIKEYs on GitHub, using GitGuardian.
+- [x] Preserve APIKEYs on GitHub using GitGuardian.
+- [x] Automate deploy from GitHub to Google Firebase cloud hosting using Travis CI.
+- [x] Automate tests using Selenium IDE and TestCafe (on Travis pipeline).
 
 ---
 
